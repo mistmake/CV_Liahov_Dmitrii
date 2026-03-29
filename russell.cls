@@ -42,6 +42,8 @@
 \RequirePackage{ifxetex}
 % use \if-\then-\else statement
 \RequirePackage{xifthen}
+% lightweight string checks for flexible social link inputs
+\RequirePackage{xstring}
 % use a toolbox of programming tools
 \RequirePackage{etoolbox}
 % change line spacing in specific environment
@@ -54,41 +56,6 @@
 \RequirePackage{unicode-math}
 % Try to use fontawesome if available; otherwise use text fallbacks.
 \IfFileExists{fontawesome5.sty}{\RequirePackage{fontawesome5}}{}
-% Use local Roboto font files shipped with this template.
-\defaultfontfeatures{Scale=MatchLowercase}
-\setmainfont[
-  Path=font/,
-  UprightFont=Roboto-Regular.ttf,
-  BoldFont=Roboto-Bold.ttf,
-  ItalicFont=Roboto-Italic.ttf,
-  BoldItalicFont=Roboto-BoldItalic.ttf
-]{Roboto}
-\newfontfamily\roboto[
-  Path=font/,
-  UprightFont=Roboto-Regular.ttf,
-  BoldFont=Roboto-Bold.ttf,
-  ItalicFont=Roboto-Italic.ttf,
-  BoldItalicFont=Roboto-BoldItalic.ttf
-]{Roboto}
-\newfontfamily\robotolight[
-  Path=font/,
-  UprightFont=Roboto-Light.ttf,
-  ItalicFont=Roboto-LightItalic.ttf
-]{Roboto}
-\newfontfamily\sourcesanspro[
-  Path=font/,
-  UprightFont=Roboto-Regular.ttf,
-  BoldFont=Roboto-Medium.ttf,
-  ItalicFont=Roboto-Italic.ttf,
-  BoldItalicFont=Roboto-MediumItalic.ttf
-]{Roboto}
-\newfontfamily\sourcesansprolight[
-  Path=font/,
-  UprightFont=Roboto-Regular.ttf,
-  BoldFont=Roboto-Bold.ttf,
-  ItalicFont=Roboto-Italic.ttf,
-  BoldItalicFont=Roboto-BoldItalic.ttf
-]{Roboto}
 
 % Icon fallbacks (used when fontawesome is unavailable).
 \providecommand{\faMobile}{\textbf{Tel}}
@@ -128,9 +95,47 @@
 %-------------------------------------------------------------------------------
 %                Configuration for directory locations
 %-------------------------------------------------------------------------------
-% Configure an optional directory location for fonts(default: 'fonts/')
-% Not required anymore but left in place for backward compatability.
-\newcommand*{\fontdir}[1][fonts/]{\def\@fontdir{#1}}
+% Configure an optional directory location for fonts (default: 'font/').
+\def\@fontdir{font/}
+\newcommand*{\fontdir}[1][font/]{\def\@fontdir{#1}}
+\newcommand*{\acv@setupfonts}{%
+  % Load local Roboto font files after the user had a chance to override \fontdir.
+  \defaultfontfeatures{Scale=MatchLowercase}%
+  \setmainfont[
+    Path=\@fontdir,
+    UprightFont=Roboto-Regular.ttf,
+    BoldFont=Roboto-Bold.ttf,
+    ItalicFont=Roboto-Italic.ttf,
+    BoldItalicFont=Roboto-BoldItalic.ttf
+  ]{Roboto}%
+  \newfontfamily\roboto[
+    Path=\@fontdir,
+    UprightFont=Roboto-Regular.ttf,
+    BoldFont=Roboto-Bold.ttf,
+    ItalicFont=Roboto-Italic.ttf,
+    BoldItalicFont=Roboto-BoldItalic.ttf
+  ]{Roboto}%
+  \newfontfamily\robotolight[
+    Path=\@fontdir,
+    UprightFont=Roboto-Light.ttf,
+    ItalicFont=Roboto-LightItalic.ttf
+  ]{Roboto}%
+  \newfontfamily\sourcesanspro[
+    Path=\@fontdir,
+    UprightFont=Roboto-Regular.ttf,
+    BoldFont=Roboto-Medium.ttf,
+    ItalicFont=Roboto-Italic.ttf,
+    BoldItalicFont=Roboto-MediumItalic.ttf
+  ]{Roboto}%
+  \newfontfamily\sourcesansprolight[
+    Path=\@fontdir,
+    UprightFont=Roboto-Regular.ttf,
+    BoldFont=Roboto-Bold.ttf,
+    ItalicFont=Roboto-Italic.ttf,
+    BoldItalicFont=Roboto-BoldItalic.ttf
+  ]{Roboto}%
+}
+\AtEndPreamble{\acv@setupfonts}
 
 %-------------------------------------------------------------------------------
 %                Configuration for layout
@@ -217,21 +222,21 @@
 \newcommand*{\footerstyle}[1]{{\fontsize{8pt}{1em}\footerfont\scshape\color{lighttext} #1}}
 \newcommand*{\sectionstyle}[1]{{\fontsize{16pt}{1em}\bodyfont\bfseries\color{text}\@sectioncolor #1}}
 \newcommand*{\subsectionstyle}[1]{{\fontsize{12pt}{1em}\bodyfont\scshape\textcolor{text}{#1}}}
-\newcommand*{\paragraphstyle}{\fontsize{9.5pt}{1em}\bodyfontlight\upshape\color{text}}
+\newcommand*{\paragraphstyle}{\fontsize{9.5pt}{11.5pt}\bodyfontlight\upshape\color{text}}
 
 % For elements of entry
-\newcommand*{\entrytitlestyle}[1]{{\fontsize{10.5pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
-\newcommand*{\entrypositionstyle}[1]{{\fontsize{10pt}{1em}\bodyfont\color{graytext} #1}}
-\newcommand*{\entrydatestyle}[1]{{\fontsize{8pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
-\newcommand*{\entrylocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\slshape\color{russell} #1}}
-\newcommand*{\descriptionstyle}[1]{{\fontsize{9.5pt}{1em}\bodyfontlight\upshape\color{text}\RaggedRight #1}}
+\newcommand*{\entrytitlestyle}[1]{{\fontsize{10.5pt}{12.5pt}\bodyfont\bfseries\color{darktext} #1}}
+\newcommand*{\entrypositionstyle}[1]{{\fontsize{10pt}{12pt}\bodyfont\color{graytext} #1}}
+\newcommand*{\entrydatestyle}[1]{{\fontsize{8pt}{10pt}\bodyfontlight\slshape\color{graytext} #1}}
+\newcommand*{\entrylocationstyle}[1]{{\fontsize{9pt}{11pt}\bodyfontlight\slshape\color{russell} #1}}
+\newcommand*{\descriptionstyle}[1]{{\fontsize{9.5pt}{11.5pt}\bodyfontlight\upshape\color{text}\RaggedRight #1}}
 
 % For elements of subentry
-\newcommand*{\subentrytitlestyle}[1]{{\fontsize{8pt}{1em}\bodyfont\mdseries\color{graytext} #1}}
-\newcommand*{\subentrypositionstyle}[1]{{\fontsize{7pt}{1em}\bodyfont\scshape\color{graytext} #1}}
-\newcommand*{\subentrydatestyle}[1]{{\fontsize{7pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
-\newcommand*{\subentrylocationstyle}[1]{{\fontsize{7pt}{1em}\bodyfontlight\slshape\color{russell} #1}}
-\newcommand*{\subdescriptionstyle}[1]{{\fontsize{8pt}{1em}\bodyfontlight\upshape\color{text}\RaggedRight #1}}
+\newcommand*{\subentrytitlestyle}[1]{{\fontsize{8pt}{10pt}\bodyfont\mdseries\color{graytext} #1}}
+\newcommand*{\subentrypositionstyle}[1]{{\fontsize{7pt}{9pt}\bodyfont\scshape\color{graytext} #1}}
+\newcommand*{\subentrydatestyle}[1]{{\fontsize{7pt}{9pt}\bodyfontlight\slshape\color{graytext} #1}}
+\newcommand*{\subentrylocationstyle}[1]{{\fontsize{7pt}{9pt}\bodyfontlight\slshape\color{russell} #1}}
+\newcommand*{\subdescriptionstyle}[1]{{\fontsize{8pt}{10pt}\bodyfontlight\upshape\color{text}\RaggedRight #1}}
 
 % For elements of honor
 \newcommand*{\honortitlestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{graytext} #1}}
@@ -241,7 +246,7 @@
 
 % For elements of skill
 \newcommand*{\skilltypestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
-\newcommand*{\skillsetstyle}[1]{{\fontsize{9.5pt}{1em}\bodyfontlight\color{text} #1}}
+\newcommand*{\skillsetstyle}[1]{{\fontsize{9.5pt}{11.5pt}\bodyfontlight\color{text} #1}}
 
 % For elements of the cover letter
 \newcommand*{\lettersectionstyle}[1]{{\fontsize{14pt}{1em}\bodyfont\bfseries\color{text}\@sectioncolor #1}}
@@ -447,15 +452,36 @@
 %                Commands for utilities
 %-------------------------------------------------------------------------------
 % Use to align an element of tabular table
-\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{L}[1]{>{\RaggedRight\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\Centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\RaggedLeft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 
 % Use to draw horizontal line with specific thickness
 \def\vhrulefill#1{\leavevmode\leaders\hrule\@height#1\hfill \kern\z@}
 
 % Use to execute conditional statements by checking empty string
 \newcommand*{\ifempty}[3]{\ifthenelse{\isempty{#1}}{#2}{#3}}
+
+% Resolve social links from either a slug, a domain/path, or a full URL.
+\newcommand*{\acv@seturl}[3]{%
+  \IfBeginWith{#3}{http://}{%
+    \def\acv@resolvedurl{#3}%
+  }{%
+    \IfBeginWith{#3}{https://}{%
+      \def\acv@resolvedurl{#3}%
+    }{%
+      \IfSubStr{#3}{#1}{%
+        \edef\acv@resolvedurl{https://#3}%
+      }{%
+        \edef\acv@resolvedurl{#2#3}%
+      }%
+    }%
+  }%
+}
+\newcommand*{\acv@hreffrom}[4]{%
+  \acv@seturl{#1}{#2}{#3}%
+  \href{\acv@resolvedurl}{#4}%
+}
 
 
 %-------------------------------------------------------------------------------
@@ -522,25 +548,25 @@
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{http://\@homepage}{\faHome\acvHeaderIconSep\@homepage}%
+          \acv@hreffrom{.}{https://}{\@homepage}{\faHome\acvHeaderIconSep\@homepage}%
         }%
       \ifthenelse{\isundefined{\@github}}%
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://github.com/\@github}{\faGithubSquare\acvHeaderIconSep\@github}%
+          \acv@hreffrom{github.com/}{https://github.com/}{\@github}{\faGithubSquare\acvHeaderIconSep\@github}%
         }%
       \ifthenelse{\isundefined{\@gitlab}}%
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://gitlab.com/\@gitlab}{\faGitlab\acvHeaderIconSep\@gitlab}%
+          \acv@hreffrom{gitlab.com/}{https://gitlab.com/}{\@gitlab}{\faGitlab\acvHeaderIconSep\@gitlab}%
         }%
       \ifthenelse{\isundefined{\@bitbucket}}%
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://bitbucket.com/\@bitbucket}{\faBitbucket\acvHeaderIconSep\@bitbucket}%
+          \acv@hreffrom{bitbucket.com/}{https://bitbucket.com/}{\@bitbucket}{\faBitbucket\acvHeaderIconSep\@bitbucket}%
         }%
       \ifthenelse{\isundefined{\@stackoverflowid}}%
         {}%
@@ -552,19 +578,19 @@
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://www.linkedin.com/in/\@linkedin}{\faLinkedin\acvHeaderIconSep\@linkedin}%
+          \acv@hreffrom{linkedin.com/}{https://www.linkedin.com/in/}{\@linkedin}{\faLinkedin\acvHeaderIconSep\@linkedin}%
         }%
       \ifthenelse{\isundefined{\@orcid}}%
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://orcid.org/\@orcid}{\faOrcid\acvHeaderIconSep\@orcid}%
+          \acv@hreffrom{orcid.org/}{https://orcid.org/}{\@orcid}{\faOrcid\acvHeaderIconSep\@orcid}%
         }%
       \ifthenelse{\isundefined{\@twitter}}%
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://twitter.com/\@twitter}{\faTwitter\acvHeaderIconSep\@twitter}%
+          \acv@hreffrom{twitter.com/}{https://twitter.com/}{\@twitter}{\faTwitter\acvHeaderIconSep\@twitter}%
         }%
       \ifthenelse{\isundefined{\@mastodonname}}%
         {}%
@@ -582,31 +608,31 @@
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://www.reddit.com/user/\@reddit}{\faReddit\acvHeaderIconSep\@reddit}%
+          \acv@hreffrom{reddit.com/}{https://www.reddit.com/user/}{\@reddit}{\faReddit\acvHeaderIconSep\@reddit}%
         }%
       \ifthenelse{\isundefined{\@researchgate}}%
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://www.researchgate.net/profile/\@researchgate}{\faResearchgate\acvHeaderIconSep\@researchgate}%
+          \acv@hreffrom{researchgate.net/}{https://www.researchgate.net/profile/}{\@researchgate}{\faResearchgate\acvHeaderIconSep\@researchgate}%
         }%
       \ifthenelse{\isundefined{\@xing}}%
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://www.xing.com/profile/\@xing}{\faXingSquare\acvHeaderIconSep\@xing}
+          \acv@hreffrom{xing.com/}{https://www.xing.com/profile/}{\@xing}{\faXingSquare\acvHeaderIconSep\@xing}
         }%
       \ifthenelse{\isundefined{\@medium}}%
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://medium.com/@\@medium}{\faMedium\acvHeaderIconSep\@medium}%
+          \acv@hreffrom{medium.com/}{https://medium.com/@}{\@medium}{\faMedium\acvHeaderIconSep\@medium}%
         }%
       \ifthenelse{\isundefined{\@kaggle}}%
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://kaggle.com/\@kaggle}{\faKaggle\acvHeaderIconSep\@kaggle}%
+          \acv@hreffrom{kaggle.com/}{https://kaggle.com/}{\@kaggle}{\faKaggle\acvHeaderIconSep\@kaggle}%
         }%
       \ifthenelse{\isundefined{\@googlescholarid}}%
         {}%
@@ -660,27 +686,28 @@
 % Define a paragraph for CV
 \newenvironment{cvparagraph}{%
   \vspace{\acvSectionContentTopSkip}
-  \vspace{-3mm}
   \paragraphstyle
 }{%
   \par
-  \vspace{2mm}
+  \vspace{1mm}
 }
 
 % Define an environment for cventry
 \newenvironment{cventries}{%
   \vspace{\acvSectionContentTopSkip}
-  \begin{center}
+  \par\noindent
 }{%
-  \end{center}
+  \par
 }
 % Define an entry of cv information
 % Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
 \newcommand*{\cventry}[5]{%
-  \vspace{-2.0mm}
+  \par\noindent
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
-	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+  \begingroup
+  \renewcommand{\arraystretch}{1.08}
+	\begin{tabular*}{\textwidth}{@{}L{\textwidth - 4.5cm}@{\extracolsep{\fill}}R{4.5cm}@{}}
 	  \ifempty{#2#3}
 	    {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
 	    {\ifempty{#1}
@@ -689,6 +716,8 @@
 	       \entrypositionstyle{#1} & \entrydatestyle{#4} \\}}
 	  \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
 	\end{tabular*}%
+  \endgroup
+  \par\vspace{1.5mm}
 }
 
 % Define an environment for cvsubentry
@@ -736,19 +765,18 @@
 % Define an environment for cvskill
 \newenvironment{cvskills}{%
   \vspace{\acvSectionContentTopSkip}
-  \vspace{-2.0mm}
-  \begin{center}
-    \setlength\tabcolsep{1ex}
-    \setlength{\extrarowheight}{0pt}
-    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} r L{\textwidth * \real{0.9}}}
+  \par\noindent
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \begin{tabular*}{\textwidth}{@{}R{3.2cm}@{\hspace{1.2em}}L{\dimexpr\textwidth - 3.2cm - 1.2em\relax}@{}}
 }{%
-    \end{tabular*}
-  \end{center}
+  \end{tabular*}
+  \par
 }
 % Define a line of cv information(skill)
 % Usage: \cvskill{<type>}{<skillset>}
 \newcommand*{\cvskill}[2]{%
-  \skilltypestyle{#1} & \skillsetstyle{#2} \\
+  \skilltypestyle{#1} & \skillsetstyle{#2} \\[0.35em]
 }
 
 \newcommand*{\cvskilltop}[2]{%
@@ -760,14 +788,12 @@
 
 % Define an environment for cvitems(for cventry)
 \newenvironment{cvitems}{%
-  \vspace{-3.5mm}
-  \begin{itemize}[leftmargin=1.5ex, nosep, noitemsep]
+  \begin{itemize}[leftmargin=1.8ex, topsep=0.4ex, itemsep=0.3ex, parsep=0pt, partopsep=0pt]
     \RaggedRight
     \setlength{\parskip}{0pt}
     \renewcommand{\labelitemi}{\bullet}
 }{%
   \end{itemize}
-  \vspace{-5.0mm}
 }
 
 
