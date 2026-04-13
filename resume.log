@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.3.29)  31 MAR 2026 12:53
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.3.29)  13 APR 2026 10:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1320,15 +1320,15 @@ LaTeX Font Info:    ... okay on input line 74.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(39.83368pt, 517.84052pt, 39.83368pt)
-* v-part:(T,H,B)=(22.76228pt, 771.06952pt, 51.21504pt)
+* h-part:(L,W,R)=(31.2982pt, 534.91147pt, 31.2982pt)
+* v-part:(T,H,B)=(17.07182pt, 799.52228pt, 28.45274pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=517.84052pt
-* \textheight=771.06952pt
-* \oddsidemargin=-32.43631pt
-* \evensidemargin=-32.43631pt
-* \topmargin=-86.5077pt
+* \textwidth=534.91147pt
+* \textheight=799.52228pt
+* \oddsidemargin=-40.97179pt
+* \evensidemargin=-40.97179pt
+* \topmargin=-92.19817pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=11.0pt
@@ -1403,9 +1403,9 @@ Package biblatex Info: Automatic encoding selection.
 \openout4 = `resume.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'resume.bbl' not found.
+Package biblatex Info: ... file 'resume.bbl' found.
 
-No file resume.bbl.
+(./resume.bbl)
 Package biblatex Info: Reference section=0 on input line 74.
 Package biblatex Info: Reference segment=0 on input line 74.
 \headertextwidth=\skip111
@@ -1443,63 +1443,69 @@ LaTeX Font Info:    Font shape `TU/Roboto(3)/m/n' will be
 LaTeX Font Info:    Font shape `TU/Roboto(3)/b/n' will be
 (Font)              scaled to size 12.23694pt on input line 5.
 LaTeX Font Info:    Font shape `TU/Roboto(1)/m/n' will be
-(Font)              scaled to size 7.75006pt on input line 11.
+(Font)              scaled to size 7.50531pt on input line 11.
 ) (./cv/education.tex
 LaTeX Font Info:    Font shape `TU/Roboto(3)/m/n' will be
-(Font)              scaled to size 8.56586pt on input line 24.
+(Font)              scaled to size 8.3211pt on input line 24.
 LaTeX Font Info:    Font shape `TU/Roboto(3)/b/n' will be
-(Font)              scaled to size 8.56586pt on input line 24.
+(Font)              scaled to size 8.3211pt on input line 24.
 LaTeX Font Info:    Font shape `TU/Roboto(1)/m/n' will be
-(Font)              scaled to size 7.34216pt on input line 24.
-LaTeX Font Info:    Font shape `TU/Roboto(1)/m/sl' in size <9> not available
+(Font)              scaled to size 7.179pt on input line 24.
+LaTeX Font Info:    Font shape `TU/Roboto(1)/m/sl' in size <8.8> not available
 (Font)              Font shape `TU/Roboto(1)/m/it' tried instead on input line 
 24.
 LaTeX Font Info:    Font shape `TU/Roboto(1)/m/it' will be
-(Font)              scaled to size 7.34216pt on input line 24.
+(Font)              scaled to size 7.179pt on input line 24.
 
 Underfull \hbox (badness 10000) in paragraph at lines 24--24
- []|[]\TU/Roboto(1)/m/it/9 Москва[]|
+ []|[]\TU/Roboto(1)/m/it/8.8 Москва[]|
  []
 
 LaTeX Font Info:    Font shape `TU/Roboto(3)/m/n' will be
-(Font)              scaled to size 8.15796pt on input line 24.
+(Font)              scaled to size 7.91321pt on input line 24.
 LaTeX Font Info:    Font shape `TU/Roboto(1)/m/n' will be
-(Font)              scaled to size 6.52637pt on input line 24.
-LaTeX Font Info:    Font shape `TU/Roboto(1)/m/sl' in size <8> not available
+(Font)              scaled to size 6.3632pt on input line 24.
+LaTeX Font Info:    Font shape `TU/Roboto(1)/m/sl' in size <7.8> not available
 (Font)              Font shape `TU/Roboto(1)/m/it' tried instead on input line 
 24.
 LaTeX Font Info:    Font shape `TU/Roboto(1)/m/it' will be
-(Font)              scaled to size 6.52637pt on input line 24.
+(Font)              scaled to size 6.3632pt on input line 24.
+LaTeX Font Info:    Font shape `TU/Roboto(1)/m/n' will be
+(Font)              scaled to size 7.42374pt on input line 24.
 LaTeX Font Info:    Font shape `TU/Roboto(1)/b/n' will be
-(Font)              scaled to size 7.75006pt on input line 24.
+(Font)              scaled to size 7.42374pt on input line 24.
 
 Overfull \hbox (4.4403pt too wide) in paragraph at lines 24--24
    [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 34--34
- []|[]\TU/Roboto(1)/m/it/9 Москва[]|
+Underfull \hbox (badness 10000) in paragraph at lines 37--37
+ []|[]\TU/Roboto(1)/m/it/8.8 Москва[]|
  []
 
 
-Overfull \hbox (4.4403pt too wide) in paragraph at lines 34--34
+Underfull \hbox (badness 1127) in paragraph at lines 37--37
+ []|[]\TU/Roboto(1)/m/it/7.8 Сентябрь 2022 - Май 2022[]|
+ []
+
+
+Overfull \hbox (4.4403pt too wide) in paragraph at lines 37--37
    [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--46
- []|[]\TU/Roboto(1)/m/it/9 Москва[]|
+Underfull \hbox (badness 10000) in paragraph at lines 47--47
+ []|[]\TU/Roboto(1)/m/it/8.8 Москва[]|
  []
 
 
-Underfull \hbox (badness 1845) in paragraph at lines 46--46
-[]\TU/Roboto(1)/m/n/9.5 разработал проект "Сборник рецептов" с использованием б
-иблиотек Sqlite, beautifulsoup, PyQt. Приобрел знания парсинга, 
+Underfull \hbox (badness 1127) in paragraph at lines 47--47
+ []|[]\TU/Roboto(1)/m/it/7.8 Сентябрь 2021 - Май 2021[]|
  []
 
 
-Overfull \hbox (4.4403pt too wide) in paragraph at lines 46--46
+Overfull \hbox (4.4403pt too wide) in paragraph at lines 47--47
    [] 
  []
 
@@ -1509,8 +1515,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 26--26
  []
 
 
-Underfull \hbox (badness 1043) in paragraph at lines 26--26
- []|[]\TU/Roboto(1)/m/it/8 июль 2025 - октябрь 2025[]|
+Underfull \hbox (badness 1184) in paragraph at lines 26--26
+ []|[]\TU/Roboto(1)/m/it/7.8 июль 2025 - октябрь 2025[]|
  []
 
 
@@ -1519,93 +1525,77 @@ Overfull \hbox (4.4403pt too wide) in paragraph at lines 26--26
  []
 
 ) (./cv/projects.tex
-Underfull \hbox (badness 10000) in paragraph at lines 29--29
- []|[]\TU/Roboto(1)/m/it/9 Россия[]|
+Underfull \hbox (badness 10000) in paragraph at lines 24--24
+ []|[]\TU/Roboto(1)/m/it/8.8 Россия[]|
  []
 
 
-Underfull \hbox (badness 7685) in paragraph at lines 29--29
- []|[]\TU/Roboto(1)/m/it/8 Осень 2022[]|
+Underfull \hbox (badness 7907) in paragraph at lines 24--24
+ []|[]\TU/Roboto(1)/m/it/7.8 Осень 2022[]|
  []
 
-LaTeX Font Info:    Font shape `TU/Roboto(0)/m/n' will be
-(Font)              scaled to size 7.75006pt on input line 29.
-LaTeX Font Info:    Font shape `TU/Roboto(0)/b/n' will be
-(Font)              scaled to size 7.75006pt on input line 29.
 
-Overfull \hbox (4.4403pt too wide) in paragraph at lines 29--29
+Overfull \hbox (4.4403pt too wide) in paragraph at lines 24--24
    [] 
  []
 
 
-Underfull \hbox (badness 8189) in paragraph at lines 41--41
- []|[]\TU/Roboto(1)/m/it/8 Зима 2023[]|
+Underfull \hbox (badness 10000) in paragraph at lines 36--36
+ []|[]\TU/Roboto(1)/m/it/7.8 Зима 2023[]|
  []
 
 
-Overfull \hbox (4.4403pt too wide) in paragraph at lines 41--41
+Overfull \hbox (4.4403pt too wide) in paragraph at lines 36--36
    [] 
  []
 
-LaTeX Font Info:    Font shape `TU/Roboto(3)/m/n' will be
-(Font)              scaled to size 6.52637pt on input line 63.
-LaTeX Font Info:    Font shape `TU/Roboto(3)/m/sc' will be
-(Font)              scaled to size 6.52637pt on input line 63.
-[1
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 63--63
- []|[]\TU/Roboto(1)/m/it/9 Россия[]|
+Underfull \hbox (badness 10000) in paragraph at lines 50--50
+ []|[]\TU/Roboto(1)/m/it/8.8 Россия[]|
  []
 
 
-Underfull \hbox (badness 5954) in paragraph at lines 63--63
- []|[]\TU/Roboto(1)/m/it/8 Февраль 2026[]|
+Underfull \hbox (badness 6173) in paragraph at lines 50--50
+ []|[]\TU/Roboto(1)/m/it/7.8 Февраль 2026[]|
  []
 
 
-Overfull \hbox (4.4403pt too wide) in paragraph at lines 63--63
+Overfull \hbox (4.4403pt too wide) in paragraph at lines 50--50
    [] 
  []
 
 ) (./cv/skills.tex
-LaTeX Font Info:    Font shape `TU/Roboto(3)/b/n' will be
-(Font)              scaled to size 8.15796pt on input line 17.
-LaTeX Font Info:    Calculating math sizes for size <9.5> on input line 22.
+LaTeX Font Info:    Font shape `TU/Roboto(1)/b/n' will be
+(Font)              scaled to size 7.50531pt on input line 13.
+LaTeX Font Info:    Calculating math sizes for size <9.2> on input line 14.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 9.5pt on input line 22.
+(Font)              scaled to size 9.2pt on input line 14.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 6.64996pt on input line 22.
+(Font)              scaled to size 6.43996pt on input line 14.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 4.75pt on input line 22.
+(Font)              scaled to size 4.59999pt on input line 14.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 9.501pt on input line 22.
+(Font)              scaled to size 9.20097pt on input line 14.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.65067pt on input line 22.
+(Font)              scaled to size 6.44064pt on input line 14.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 4.7505pt on input line 22.
+(Font)              scaled to size 4.60048pt on input line 14.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.49898pt on input line 22.
+(Font)              scaled to size 9.199pt on input line 14.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.64925pt on input line 22.
+(Font)              scaled to size 6.43925pt on input line 14.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.74948pt on input line 22.
+(Font)              scaled to size 4.59949pt on input line 14.
 LaTeX Font Info:    Font shape `TU/Roboto(1)/m/n' will be
-(Font)              scaled to size 5.425pt on input line 22.
-
-Underfull \hbox (badness 2735) in paragraph at lines 27--27
- []|[]\TU/Roboto(3)/b/n/10 Языки[]|
- []
-
-
-Overfull \hbox (2.9602pt too wide) in paragraph at lines 12--29
-  [] 
- []
-
+(Font)              scaled to size 5.25368pt on input line 14.
 )
-LaTeX Font Info:    Font shape `TU/Roboto(0)/b/n' will be
-(Font)              scaled to size 8.93295pt on input line 102.
- [2] (./resume.aux)
+LaTeX Font Info:    Font shape `TU/Roboto(3)/m/n' will be
+(Font)              scaled to size 6.52637pt on input line 102.
+LaTeX Font Info:    Font shape `TU/Roboto(3)/m/sc' will be
+(Font)              scaled to size 6.52637pt on input line 102.
+ [1
+
+] (./resume.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -1615,12 +1605,12 @@ Package logreq Info: Writing requests to 'resume.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 39761 strings out of 468168
- 803938 string characters out of 5432815
- 1816842 words of memory out of 5000000
- 67930 multiletter control sequences out of 15000+600000
- 631913 words of font info for 109 fonts, out of 8000000 for 9000
+ 39759 strings out of 468168
+ 803829 string characters out of 5432815
+ 1824850 words of memory out of 5000000
+ 67927 multiletter control sequences out of 15000+600000
+ 631905 words of font info for 108 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 131i,12n,135p,564b,803s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 131i,11n,135p,564b,803s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on resume.pdf (2 pages).
+Output written on resume.pdf (1 page).

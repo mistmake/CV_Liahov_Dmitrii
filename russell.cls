@@ -222,14 +222,14 @@
 \newcommand*{\footerstyle}[1]{{\fontsize{8pt}{1em}\footerfont\scshape\color{lighttext} #1}}
 \newcommand*{\sectionstyle}[1]{{\fontsize{16pt}{1em}\bodyfont\bfseries\color{text}\@sectioncolor #1}}
 \newcommand*{\subsectionstyle}[1]{{\fontsize{12pt}{1em}\bodyfont\scshape\textcolor{text}{#1}}}
-\newcommand*{\paragraphstyle}{\fontsize{9.5pt}{11.5pt}\bodyfontlight\upshape\color{text}}
+\newcommand*{\paragraphstyle}{\fontsize{9.2pt}{10.3pt}\bodyfontlight\upshape\color{text}}
 
 % For elements of entry
-\newcommand*{\entrytitlestyle}[1]{{\fontsize{10.5pt}{12.5pt}\bodyfont\bfseries\color{darktext} #1}}
-\newcommand*{\entrypositionstyle}[1]{{\fontsize{10pt}{12pt}\bodyfont\color{graytext} #1}}
-\newcommand*{\entrydatestyle}[1]{{\fontsize{8pt}{10pt}\bodyfontlight\slshape\color{graytext} #1}}
-\newcommand*{\entrylocationstyle}[1]{{\fontsize{9pt}{11pt}\bodyfontlight\slshape\color{russell} #1}}
-\newcommand*{\descriptionstyle}[1]{{\fontsize{9.5pt}{11.5pt}\bodyfontlight\upshape\color{text}\RaggedRight #1}}
+\newcommand*{\entrytitlestyle}[1]{{\fontsize{10.2pt}{11.6pt}\bodyfont\bfseries\color{darktext} #1}}
+\newcommand*{\entrypositionstyle}[1]{{\fontsize{9.7pt}{10.9pt}\bodyfont\color{graytext} #1}}
+\newcommand*{\entrydatestyle}[1]{{\fontsize{7.8pt}{8.8pt}\bodyfontlight\slshape\color{graytext} #1}}
+\newcommand*{\entrylocationstyle}[1]{{\fontsize{8.8pt}{9.8pt}\bodyfontlight\slshape\color{russell} #1}}
+\newcommand*{\descriptionstyle}[1]{{\fontsize{9.1pt}{10.2pt}\bodyfontlight\upshape\color{text}\RaggedRight #1}}
 
 % For elements of subentry
 \newcommand*{\subentrytitlestyle}[1]{{\fontsize{8pt}{10pt}\bodyfont\mdseries\color{graytext} #1}}
@@ -245,8 +245,8 @@
 \newcommand*{\honorlocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\slshape\color{russell} #1}}
 
 % For elements of skill
-\newcommand*{\skilltypestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
-\newcommand*{\skillsetstyle}[1]{{\fontsize{9.5pt}{11.5pt}\bodyfontlight\color{text} #1}}
+\newcommand*{\skilltypestyle}[1]{{\fontsize{9.5pt}{10.2pt}\bodyfont\bfseries\color{darktext} #1}}
+\newcommand*{\skillsetstyle}[1]{{\fontsize{9.1pt}{10.2pt}\bodyfontlight\color{text} #1}}
 
 % For elements of the cover letter
 \newcommand*{\lettersectionstyle}[1]{{\fontsize{14pt}{1em}\bodyfont\bfseries\color{text}\@sectioncolor #1}}
@@ -440,12 +440,12 @@
 \newcommand{\acvHeaderAfterAddressSkip}{-.5mm}
 \newcommand{\acvHeaderIconSep}{\space}
 \newcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
-\newcommand{\acvHeaderAfterSocialSkip}{4mm}
+\newcommand{\acvHeaderAfterSocialSkip}{1.6mm}
 \newcommand{\acvHeaderAfterQuoteSkip}{5mm}
 
 % Others
-\newcommand{\acvSectionTopSkip}{2mm}
-\newcommand{\acvSectionContentTopSkip}{1.5mm}
+\newcommand{\acvSectionTopSkip}{0.3mm}
+\newcommand{\acvSectionContentTopSkip}{0.1mm}
 
 
 %-------------------------------------------------------------------------------
@@ -689,7 +689,7 @@
   \paragraphstyle
 }{%
   \par
-  \vspace{1mm}
+  \vspace{0pt}
 }
 
 % Define an environment for cventry
@@ -706,7 +706,7 @@
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begingroup
-  \renewcommand{\arraystretch}{1.08}
+  \renewcommand{\arraystretch}{1}
 	\begin{tabular*}{\textwidth}{@{}L{\textwidth - 4.5cm}@{\extracolsep{\fill}}R{4.5cm}@{}}
 	  \ifempty{#2#3}
 	    {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
@@ -717,7 +717,7 @@
 	  \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
 	\end{tabular*}%
   \endgroup
-  \par\vspace{1.5mm}
+  \par\vspace{0.2mm}
 }
 
 % Define an environment for cvsubentry
@@ -776,7 +776,7 @@
 % Define a line of cv information(skill)
 % Usage: \cvskill{<type>}{<skillset>}
 \newcommand*{\cvskill}[2]{%
-  \skilltypestyle{#1} & \skillsetstyle{#2} \\[0.35em]
+  \skilltypestyle{#1} & \skillsetstyle{#2} \\[0.05em]
 }
 
 \newcommand*{\cvskilltop}[2]{%
@@ -788,7 +788,7 @@
 
 % Define an environment for cvitems(for cventry)
 \newenvironment{cvitems}{%
-  \begin{itemize}[leftmargin=1.8ex, topsep=0.4ex, itemsep=0.3ex, parsep=0pt, partopsep=0pt]
+  \begin{itemize}[leftmargin=1.8ex, topsep=0pt, itemsep=0pt, parsep=0pt, partopsep=0pt]
     \RaggedRight
     \setlength{\parskip}{0pt}
     \renewcommand{\labelitemi}{\bullet}

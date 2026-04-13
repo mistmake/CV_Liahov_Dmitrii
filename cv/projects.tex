@@ -13,28 +13,23 @@
 %---------------------------------------------------------
 \cventry
   {Яндекс лицей} % Organisation
-  {Десктопное приложение "Сборник рецептов"} % Project
+  {\href{https://github.com/mistmake/Recipes_collection.git}{Десктопное приложение "Сборник рецептов"~\faGithubSquare}} % Project
   {Россия} % Location
   {Осень 2022} % Date(s)
   {
     \begin{cvitems}
       \item {Создал сервис, который парсит сайт с рецептами и выводит их в удобном формате в десктопном приложении.}
-      \item {Функции и стек:
-        \begin{itemize}[leftmargin=1.8em]
-          \item Десктопные приложение реализовано через PyQt
-          \item Есть поиск как блюд, так и отдельных продуктов. Более того, можно посмотреть КБЖУ каждого продукта. Реализация через Sqlite в виде БД с несколькими таблицами
-          \item Все данные парсятся с сайта с помощью двух парсеров, для продуктов и для блюд. Парсеры заполняют бд и на данный момент там около 6900 продуктов и 1521 блюдо.
-        \end{itemize}}
+      \item {Функции и стек: PyQt для десктопного интерфейса; поиск по блюдам и продуктам с просмотром КБЖУ; SQLite-БД с несколькими таблицами; два парсера для продуктов и блюд, наполняющих базу на \textasciitilde{}6900 продуктов и 1521 блюдо.}
     \end{cvitems}
   }
   \cventry
   {} % Organisation
-  {Reading tracker} % Project
+  {\href{https://github.com/mistmake/Reading_tracker}{Веб-приложение "Reading tracker"~\faGithubSquare}}% Project
   {Россия} % Location
   {Зима 2023} % Date(s)
   {
     \begin{cvitems}
-      \item {Разработал Django-приложение для чтения и тренинга EPUB-книг.}
+      \item {Разработал Django-приложение для чтения и трекинга EPUB-книг.}
       \item {Есть загрузка файлов .epub, и правильное форматирование для вывода на сайт}
       \item {Есть кастомная модель пользователя с логином, регистрацией, login\textbackslash logout, password reset и связка пользователя с книгами.}
     \end{cvitems}
@@ -49,15 +44,7 @@
       \item {Университетский проект, сделанный в команде на C++. Наша цель была реализовать GPT-like модель, которая может предсказать следующие слова и символы по контексту}
       \item {В процессе разработки были созданы: простой биграм для сравнения с финальной моделью, токенизатор, чтобы показать, как анализируется датасет в продакшене, и сама финальная модель.}
       \item {Мы тренировали модель на датасете tinystories (примерно 2млн символов).}
-      \item {Параметры модели:
-        \begin{itemize}[leftmargin=1.8em]
-          \item 10,788,929 parameters overall
-          \item Embedding dimensions: 384
-          \item Amount of transformer blocks: 6
-          \item Amount of heads in multi-attention: 6
-          \item Training time: \textasciitilde{}5 hours
-        \end{itemize}
-      }
+      \item {Параметры модели: 10,788,929 параметров, embedding dimension 384, 6 transformer blocks, 6 attention heads, training time \textasciitilde{}5 hours.}
       \item {Я отвечал за оркестрацию проекта и создание архитектуры модели. Более того, настройка cmakelists.txt была тоже на мне.}
     \end{cvitems}
   }
