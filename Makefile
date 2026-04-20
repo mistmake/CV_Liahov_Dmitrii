@@ -1,13 +1,18 @@
 PDF_NAME := resume
+PDF_NAME_EN := resume_en
 XELATEX := xelatex -interaction=nonstopmode -halt-on-error
 
-.PHONY: all pdf pdf-bib clean
+.PHONY: all pdf pdf-en pdf-bib clean
 
 all: pdf
 
 pdf:
 	$(XELATEX) $(PDF_NAME).tex
 	$(XELATEX) $(PDF_NAME).tex
+
+pdf-en:
+	$(XELATEX) $(PDF_NAME_EN).tex
+	$(XELATEX) $(PDF_NAME_EN).tex
 
 pdf-bib:
 	$(XELATEX) $(PDF_NAME).tex

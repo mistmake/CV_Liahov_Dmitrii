@@ -21,12 +21,26 @@ make pdf
 
 Готовый файл появится как `resume.pdf`.
 
+Для английской версии:
+
+```bash
+make pdf-en
+```
+
+Готовый файл появится как `resume_en.pdf`.
+
 ## Полезные команды
 
 Собрать PDF:
 
 ```bash
 make pdf
+```
+
+Собрать английскую версию:
+
+```bash
+make pdf-en
 ```
 
 Собрать PDF с `biber`:
@@ -50,6 +64,8 @@ make clean
 xelatex -interaction=nonstopmode -halt-on-error resume.tex
 xelatex -interaction=nonstopmode -halt-on-error resume.tex
 ```
+
+Важно: файлы в `cv/` и `cv_en/` не собираются отдельно. Это только секции, их нужно компилировать через основной файл `resume.tex` или `resume_en.tex`.
 
 Для версии с библиографией:
 

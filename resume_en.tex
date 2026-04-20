@@ -1,0 +1,71 @@
+% !TeX program = xelatex
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+% A4 paper size by default, use 'letterpaper' for US letter
+\documentclass[11pt, a4paper]{russell}
+
+% Configure page margins with geometry
+\geometry{left=1.1cm, top=.6cm, right=1.1cm, bottom=1.0cm, footskip=.5cm}
+
+% Specify the location of the included fonts
+\fontdir[font/]
+
+% Color for highlights
+% russell Colors: russell-emerald, russell-skyblue, russell-red, russell-pink, russell-orange
+%                 russell-nephritis, russell-concrete, russell-darknight, russell-purple
+\colorlet{russell}{russell-black}
+\colorlet{sectiondivider}{black}
+% Uncomment if you would like to specify your own color
+% \definecolor{russell}{HTML}{CA63A8}
+
+% Colors for text
+% Uncomment if you would like to specify your own color
+\definecolor{darktext}{HTML}{000000}
+\definecolor{text}{HTML}{555555}
+\definecolor{graytext}{HTML}{555555}
+\definecolor{lighttext}{HTML}{333333}
+
+% Keep section headers black while body text stays gray
+\renewcommand*{\sectionstyle}[1]{{\fontsize{15pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
+
+% Set false if you don't want to highlight section with russell color
+\setbool{acvSectionColorHighlight}{true}
+
+% If you would like to change the social information separator from a pipe (|) to something else
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+
+%-------------------------------------------------------------------------------
+%	PERSONAL INFORMATION
+%-------------------------------------------------------------------------------
+\name{Dmitrii}{Liahov}
+
+\mobile{+79267002007}
+\email{lyakhov@ya.ru}
+\linkedin{linkedin.com/in/dmitrii-liahov-3828a23b7/}
+\github{github.com/mistmake}
+\extrainfo{\href{https://t.me/otncv}{\textbf{Telegram}: @wwwkkkio}}
+
+
+%-------------------------------------------------------------------------------
+\begin{document}
+
+\makecvheader
+
+\makecvfooter
+  {}
+  {}
+  {}
+
+%-------------------------------------------------------------------------------
+%	CV/RESUME CONTENT
+%-------------------------------------------------------------------------------
+\input{cv_en/summary.tex}
+\input{cv_en/education.tex}
+\input{cv_en/experience.tex}
+\input{cv_en/projects.tex}
+\input{cv_en/skills.tex}
+
+%-------------------------------------------------------------------------------
+\end{document}

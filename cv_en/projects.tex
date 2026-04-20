@@ -1,0 +1,53 @@
+% !TeX root = ../resume_en.tex
+%-------------------------------------------------------------------------------
+%	SECTION TITLE
+%-------------------------------------------------------------------------------
+\cvsection{Projects}
+
+
+%-------------------------------------------------------------------------------
+%	CONTENT
+%-------------------------------------------------------------------------------
+\begin{cventries}
+
+%---------------------------------------------------------
+\cventry
+  {Yandex Lyceum} % Organisation
+  {\href{https://github.com/mistmake/Recipes_collection.git}{Desktop Application "Recipes Collection"~\faGithubSquare}} % Project
+  {Russia} % Location
+  {Fall 2022} % Date(s)
+  {
+    \begin{cvitems}
+      \item {Built a service that scrapes a recipe website and displays recipes in a convenient desktop application format.}
+      \item {Features and stack: PyQt desktop UI; dish and ingredient search with calories, protein, fat, and carbs information; SQLite database with multiple tables; two parsers for products and dishes that populate a database of about 6,900 ingredients and 1,521 dishes.}
+    \end{cvitems}
+  }
+  \cventry
+  {} % Organisation
+  {\href{https://github.com/mistmake/Reading_tracker}{Web Application "Reading Tracker"~\faGithubSquare}}% Project
+  {Russia} % Location
+  {Winter 2023} % Date(s)
+  {
+    \begin{cvitems}
+      \item {Developed a Django application for reading and tracking EPUB books.}
+      \item {Implemented `.epub` file uploads and proper content formatting for website display.}
+      \item {Added a custom user model with sign-up, login/logout, password reset, and user-to-book relationships.}
+    \end{cvitems}
+  }
+  \cventry
+  {HSE University} % Organisation
+  {\href{https://github.com/mistmake/HSE-project-Mini-GPT-cpp.git}{HSE MiniGPT in C++~\faGithubSquare}} % Project
+  {Russia} % Location
+  {February 2026} % Date(s)
+  {
+    \begin{cvitems}
+      \item {University team project in C++. Our goal was to implement a GPT-like model capable of predicting the next words and characters from context.}
+      \item {Built a simple bigram baseline for comparison, a tokenizer to demonstrate production-style dataset preprocessing, and the final model itself.}
+      \item {Trained the model on the TinyStories dataset (about 2 million characters).}
+      \item {Model parameters: 10,788,929 parameters, embedding dimension 384, 6 transformer blocks, 6 attention heads, training time \textasciitilde{}5 hours.}
+      \item {Owned project orchestration and model architecture design. I was also responsible for configuring `CMakeLists.txt`.}
+    \end{cvitems}
+  }
+
+%---------------------------------------------------------
+\end{cventries}
